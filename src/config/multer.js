@@ -8,7 +8,6 @@ export default {
     filename: (req, file, cb) => {
       crypto.randomBytes(16, (err, res) => {
         if (err) return cb(err);
-        console.log(res.toString('hex') + extname(file.originalname));
         return cb(null, res.toString('hex') + extname(file.originalname));
       });
     },
